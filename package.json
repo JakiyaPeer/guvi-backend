@@ -1,12 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
- "type":"module",
+  "type": "module",
   "scripts": {
-    "start":"node index.js",
-    "dev":"nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +20,15 @@
     "mongoose": "^8.8.3",
     "nodemon": "^3.1.7",
     "razorpay": "^2.9.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakiyaPeer/guvi-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JakiyaPeer/guvi-backend/issues"
+  },
+  "homepage": "https://github.com/JakiyaPeer/guvi-backend#readme",
+  "description": ""
 }
