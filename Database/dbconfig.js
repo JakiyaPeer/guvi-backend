@@ -9,6 +9,12 @@ const connectDB = async () => {
     console.log("MongoDb connected successfully");
   } catch (error) {
     console.log(error);
+
+    
   }
 };
+
+
+
+
 export default connectDB;

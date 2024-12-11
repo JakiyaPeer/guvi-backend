@@ -49,6 +49,7 @@ export const loginUser = async (req, res) => {
         const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
             expiresIn: "1h",
         });
+       
         user.token = token;
         await user.save();
         res
@@ -57,4 +58,5 @@ export const loginUser = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
+    
 };
