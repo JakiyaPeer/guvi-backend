@@ -16,7 +16,7 @@ export const createLesson = async (req, res) => {
 
 export const getLessons = async (req, res) => {
   try {
-    const lessons = await Lesson.find("tutorId studentId")
+    const lessons = await Lesson.find()
       
 
     res.status(200).json(lessons);
