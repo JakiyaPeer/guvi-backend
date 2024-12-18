@@ -1,5 +1,5 @@
 import express from "express";
-import { createLesson, getLessons,  } from "../controllers/lessonController.js";
+import { createLesson, getLessons, updateLesson,  } from "../controllers/lessonController.js";
 
 const router = express.Router();
 
@@ -8,6 +8,8 @@ router.post("/lessons", createLesson);
 
 // Route to get all lessons
 router.get("/lessons", getLessons);
+
+router.put("/lesson/:lessonId", updateLesson);
 
 
 

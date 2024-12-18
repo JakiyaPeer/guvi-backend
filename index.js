@@ -21,9 +21,9 @@ app.use(cors());
 connectDB();
 
 app.use("/api/auth",authRoutes)
-app.use("/api/lesson",lessonRoutes)
+app.use("/api/lessons",lessonRoutes)
 app.use("api/auth",payementRoutes)
-
+///api/lessons/lesson/6756a5873b88be36fe6f5b0
 
 
 app.get("/", (req,res)=>{
