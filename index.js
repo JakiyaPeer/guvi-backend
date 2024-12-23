@@ -12,6 +12,7 @@ const app=express();
 import authRoutes from "./routes/authRoutes.js";
 import lessonRoutes from "./routes/lessonRoutes.js";
 import payementRoutes from "./routes/payementRoutes.js";
+import tutorRoutes from "./routes/tutorRoutes.js"
 
 
 
@@ -23,6 +24,7 @@ connectDB();
 app.use("/api/auth",authRoutes)
 app.use("/api/lessons",lessonRoutes)
 app.use("api/auth",payementRoutes)
+app.use("/api/tutors",tutorRoutes)
 ///api/lessons/lesson/6756a5873b88be36fe6f5b0
 
 
