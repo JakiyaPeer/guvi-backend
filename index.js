@@ -2,7 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./Database/dbconfig.js";
-
+import mongoose from "mongoose";
+import  models  from "./models/User.js";
 
 
 
@@ -12,7 +13,10 @@ const app=express();
 import authRoutes from "./routes/authRoutes.js";
 import lessonRoutes from "./routes/lessonRoutes.js";
 import payementRoutes from "./routes/payementRoutes.js";
-import tutorRoutes from "./routes/tutorRoutes.js"
+import tutorRoutes from "./routes/tutorRoutes.js";
+import courseRoutes from "./routes/courseRoutes.js";
+
+
 
 
 
@@ -26,11 +30,12 @@ app.use("/api/lessons",lessonRoutes)
 app.use("api/auth",payementRoutes)
 app.use("/api/tutors",tutorRoutes)
 ///api/lessons/lesson/6756a5873b88be36fe6f5b0
+app.use("/api/course",courseRoutes)
 
-
-app.get("/", (req,res)=>{
-res.status(200).send("welcome to our api");
-});
+app.get("/",async(req,res)=>{
+    const result = await models.find()
+    return res.json(result);
+    })
 
 
 const port=process.env.PORT || 4000;
