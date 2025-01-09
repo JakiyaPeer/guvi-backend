@@ -11,7 +11,6 @@ router.post('/',createTutor);
 // Get all tutors with optional filters
 //router.get('/', getTutors);
 router.get('/',getTutors)
-
 // Update tutor availability
 //router.put('/:id/availability', updateAvailability);
 router.put('/:id/availability',updateAvailability);

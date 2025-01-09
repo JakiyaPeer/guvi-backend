@@ -32,7 +32,6 @@ export const updateAvailability = async (req, res) => {
   try {
     const { id } = req.params;
     const { availability } = req.body;
-
     const tutor = await Tutor.findByIdAndUpdate(
       id,
       { availability },

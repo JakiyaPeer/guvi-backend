@@ -89,12 +89,38 @@ export const logoutUser = async (req, res) => {
         }
 
         // Clear the user's token
-        user.token = null;
+        user.token = "";
         await user.save();
 
         res.status(200).json({ message: "Logout successful" });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Server error" });
+    }
+};
+
+//get id wise
+import mongoose from 'mongoose'; // Add this import
+
+export const getUserById = async (req, res) => {
+    try {
+        const { id } = req.params; // Extract the ID from the request parameters
+        console.log("Fetching user with ID:", id);
+
+        // Ensure the ID is a valid MongoDB ObjectId
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ success: false, message: "Invalid user ID" });
+        }
+
+        // Fetch the user by ID
+        const user = await User.findById(id);
+
+        if (!user) {
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+
+        res.status(200).json({ success: true, user });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
     }
 };
