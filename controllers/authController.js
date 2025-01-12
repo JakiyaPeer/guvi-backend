@@ -88,6 +88,8 @@ export const logoutUser = async (req, res) => {
             return res.status(404).json({ message: "User not found" });
         }
 
+
+
         // Clear the user's token
         user.token = "";
         await user.save();

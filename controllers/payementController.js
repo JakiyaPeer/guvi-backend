@@ -13,12 +13,12 @@ import Razorpay from "razorpay";
   export  const createpayement=async(req,res)=>{
     const { amount } = req.body;
     const order = await razorpay.orders.create({
-      amount: amount * 100, // Convert to smallest currency unit
+      amount: amount * 100, 
       currency: 'INR',
     });
     res.json(order);
   };
   
-  export default Payement;// For CommonJS
+  export default Payement;
 
   

@@ -15,6 +15,7 @@ import lessonRoutes from "./routes/lessonRoutes.js";
 import payementRoutes from "./routes/payementRoutes.js";
 import tutorRoutes from "./routes/tutorRoutes.js";
 import courseRoutes from "./routes/courseRoutes.js";
+import Payement from "./routes/payementRoutes.js"
 
 
 
@@ -31,6 +32,7 @@ app.use("api/auth",payementRoutes)
 app.use("/api/tutors",tutorRoutes)
 ///api/lessons/lesson/6756a5873b88be36fe6f5b0
 app.use("/api/course",courseRoutes)
+app.use("api/Payement",payementRoutes)
 
 app.get("/",async(req,res)=>{
     const result = await models.find()
